@@ -11,8 +11,9 @@ wide.
 ## How it works
 
 `main.py` (Python 3.13, standard library only) copies the bundled artwork
-`entry.png` to `/output/entry.png`. No network, fully deterministic — every
-run writes the same bytes.
+`entry.png` to `/output/entry.png`, then verifies the output is a non-empty
+JPEG by its magic bytes. No network, fully deterministic — every run writes
+the same bytes.
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
